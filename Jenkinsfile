@@ -14,7 +14,7 @@ pipeline{
             }
         }
         stage('Push image to ECR') {
-            steps {.
+            steps {
                 script {
                     docker.withRegistry("https://${env.ACCOUNT_ID}.dkr.ecr.us-east-2.amazonaws.com",'ecr:us-east-2:aws-login') {
                     app.push("${env.BUILD_NUMBER}")
